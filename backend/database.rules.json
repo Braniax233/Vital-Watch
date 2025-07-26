@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "vitals": {
+      ".read": true,
+      ".write": true,
+      ".indexOn": "userId"
+    }
+  }
+}
