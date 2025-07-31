@@ -5,7 +5,6 @@ import { Ionicons } from '@expo/vector-icons';
 
 // Import screens
 import DashboardScreen from '../screens/DashboardScreen';
-import HealthMetricsScreen from '../screens/HealthMetricsScreen';
 import FitnessTipsScreen from '../screens/FitnessTipsScreen';
 
 const Tab = createBottomTabNavigator();
@@ -19,8 +18,7 @@ const BottomTabNavigator = () => {
 
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'Metrics') {
-            iconName = focused ? 'stats-chart' : 'stats-chart-outline';
+
           } else if (route.name === 'Tips') {
             iconName = focused ? 'bulb' : 'bulb-outline';
           }
@@ -44,13 +42,7 @@ const BottomTabNavigator = () => {
           tabBarLabel: 'Home',
         }}
       />
-      <Tab.Screen 
-        name="Metrics" 
-        component={HealthMetricsScreen}
-        options={{
-          tabBarLabel: 'Metrics',
-        }}
-      />
+
       <Tab.Screen 
         name="Tips" 
         component={FitnessTipsScreen}

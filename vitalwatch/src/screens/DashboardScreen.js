@@ -19,7 +19,15 @@ const DashboardScreen = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
   const { user } = useAuth();
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const loadVitals = async () => {
       try {
@@ -48,7 +56,11 @@ const DashboardScreen = () => {
   }, []);
 
   const chartData = useMemo(() => {
-    const labels = vitals.slice(-6).map(v => new Date(v.timestamp).getHours() + ':00');
+    const labels = vitals.slice(-6).map((_, index) => {
+      const time = new Date(currentTime.getTime() - (5 - index) * 60000);
+      return time.getHours().toString().padStart(2, '0') + ':' + 
+             time.getMinutes().toString().padStart(2, '0');
+    });
     const heartRateData = vitals.slice(-6).map(v => v.heartRate);
     const spo2Data = vitals.slice(-6).map(v => v.spo2);
 

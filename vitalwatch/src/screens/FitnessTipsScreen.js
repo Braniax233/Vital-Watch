@@ -16,51 +16,51 @@ const FitnessTipsScreen = () => {
   const [selectedTip, setSelectedTip] = useState(null);
   const fitnessCategories = useMemo(() => [
     {
-      title: 'Dynamic Warm-up Routine',
-      description: 'Prepare your body with dynamic stretches and mobility exercises',
-      image: require('../../assets/warmup.svg'),
+      title: 'Morning Stretches',
+      description: 'Essential stretches to start your day with energy and flexibility',
+      image: require('../../assets/morning stretches .jpg'),
       content: [
-        '1. Arm circles - 10 forward, 10 backward',
-        '2. Leg swings - 10 each leg',
-        '3. Hip rotations - 10 each direction',
-        '4. Jumping jacks - 20 reps',
-        '5. High knees - 30 seconds'
+        '1. Cat-Cow Stretch - 10 repetitions',
+        '2. Hip Flexor Stretch - 30 seconds each side',
+        '3. Child\'s Pose - 1 minute',
+        '4. Torso Rotation - 10 each side',
+        '5. Standing Quad Stretch - 30 seconds each leg'
       ]
     },
     {
-      title: 'Stay Hydrated During Workouts',
-      description: 'Proper hydration for performance, endurance, and safety',
-      image: require('../../assets/hydration.svg'),
+      title: 'Staying Hydrated During Workout',
+      description: 'Tips for maintaining proper hydration during exercise',
+      image: require('../../assets/hydration.jpg'),
       content: [
-        '1. Drink 16-20 oz water 2-3 hours before exercise',
-        '2. Sip 7-10 oz water every 10-20 minutes during workout',
-        '3. Post-workout: 16-24 oz water for every pound lost',
-        '4. Monitor urine color - should be light yellow',
-        '5. Consider electrolyte drinks for intense workouts'
+        '1. Drink water before you feel thirsty',
+        '2. Take small sips throughout your workout',
+        '3. Monitor your hydration levels',
+        '4. Use a reusable water bottle',
+        '5. Hydrate based on workout intensity'
       ]
     },
     {
       title: 'Essential Cool-down Stretches',
-      description: 'Important stretching exercises for post-workout recovery',
-      image: require('../../assets/stretching.svg'),
+      description: 'Post-workout stretches for better recovery',
+      image: require('../../assets/cooldown stretches.jpg'),
       content: [
-        '1. Quad stretch - 30 seconds each leg',
-        '2. Hamstring stretch - 30 seconds each leg',
-        '3. Child\'s pose - 1 minute',
-        '4. Cat-cow stretch - 10 repetitions',
-        '5. Shoulder rolls - 10 forward, 10 backward'
+        '1. Standing Quadriceps Stretch - 30 seconds each',
+        '2. Seated Hamstring Stretch - 30 seconds',
+        '3. Child\'s Pose - 1 minute',
+        '4. Chest Stretch - 30 seconds',
+        '5. Light Walking - 5 minutes'
       ]
     },
     {
       title: 'Fueling Your Fitness',
-      description: 'Optimize your nutrition for better workout results',
-      image: require('../../assets/nutrition.svg'),
+      description: 'Nutrition tips for optimal workout performance',
+      image: require('../../assets/fueling fitness.jpg'),
       content: [
-        '1. Pre-workout: Complex carbs + lean protein',
-        '2. Post-workout: Protein within 30 minutes',
-        '3. Stay hydrated throughout the day',
-        '4. Include healthy fats in your diet',
-        '5. Time your meals properly'
+        '1. Eat balanced meals with protein and carbs',
+        '2. Include fresh fruits and vegetables',
+        '3. Stay hydrated with water',
+        '4. Time your pre-workout meal',
+        '5. Consider post-workout nutrition'
       ]
     },
   ], []);
@@ -72,21 +72,6 @@ const FitnessTipsScreen = () => {
         <Text style={styles.subtitle}>Expert advice for better health</Text>
       </View>
 
-      <View style={styles.featuredTipContainer}>
-        <Image
-          source={require('../../assets/featured-tip.svg')}
-          style={styles.featuredImage}
-        />
-        <View style={styles.featuredContent}>
-          <Text style={styles.featuredTitle}>Today's Featured Tip</Text>
-          <Text style={styles.featuredDescription}>
-            Morning stretches to boost your energy and flexibility
-          </Text>
-          <TouchableOpacity style={styles.viewButton}>
-            <Text style={styles.viewButtonText}>View Routine</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
 
       <View style={styles.categoriesContainer}>
         {fitnessCategories.map((category, index) => (
@@ -217,7 +202,7 @@ const styles = StyleSheet.create({
   },
   categoryImage: {
     width: '100%',
-    height: 150,
+    height: 250,
     resizeMode: 'cover',
   },
   categoryContent: {
